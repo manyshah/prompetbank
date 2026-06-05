@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Prompt Copy</title>
+</head>
+<body>
+
+<textarea id="prompt" style="width:100%;height:200px;">
+زن کت طوسی خیابانی⚡
+high-end editorial fashion photography, vertical 9:16, ultra-realistic high-angle street portrait of a young adult female looking up at the camera on textured asphalt
+</textarea>
+
+<br><br>
+
+<button onclick="copyText()">
+📋 کپی پرامپت
+</button>
+
+<script>
+function copyText() {
+  var text = document.getElementById("prompt");
+  navigator.clipboard.writeText(text.value);
+  alert("پرامپت کپی شد");
+}
+</script>
+
+</body>
+</html>
