@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head>
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>زن کت طوسی خیابانی</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زن کت طوسی خیابانی</title><style>
 
 *{
 margin:0;
@@ -9,12 +11,16 @@ box-sizing:border-box;
 font-family:tahoma;
 }
 
+html,
+body{
+width:100%;
+overflow-x:hidden;
+}
+
 body{
 background:url('https://s21.uupload.ir/files/gambegampanjom/بانک%20پرامپت/لوگو%20و%20تصاویر%20اولیه/file_00000000500471f49b917570bded0ba3.png') center center/cover no-repeat fixed;
 min-height:100vh;
 color:#fff;
-
-overflow-x:hidden;
 }
 
 body::before{
@@ -33,7 +39,6 @@ width:100%;
 max-width:700px;
 
 margin:0 auto;
-
 padding:20px;
 }
 
@@ -49,10 +54,8 @@ text-shadow:
 
 .image{
 display:block;
-
 width:100%;
 max-width:100%;
-
 height:auto;
 
 border-radius:24px;
@@ -64,7 +67,6 @@ box-shadow:
 }
 
 .copy-btn{
-
 display:block;
 
 width:100%;
@@ -72,13 +74,13 @@ width:100%;
 padding:18px;
 
 border:none;
-
 border-radius:20px;
 
 cursor:pointer;
 
 font-size:18px;
 font-weight:bold;
+
 color:#fff;
 
 background:linear-gradient(
@@ -95,11 +97,9 @@ box-shadow:
 0 0 40px rgba(0,180,255,.12);
 
 transition:.3s;
-
 }
 
 .copy-btn:hover{
-
 transform:translateY(-2px);
 
 background:linear-gradient(
@@ -107,11 +107,9 @@ background:linear-gradient(
 rgba(110,90,255,.40),
 rgba(0,180,255,.25)
 );
-
 }
 
 .success{
-
 display:none;
 
 text-align:center;
@@ -121,12 +119,10 @@ margin-top:15px;
 font-weight:bold;
 
 color:#00ff88;
-
 }
 
-textarea{
-position:absolute;
-left:-9999px;
+#promptText{
+display:none;
 }
 
 </style></head><body><div class="container"><div class="title">
@@ -145,22 +141,16 @@ onclick="copyPrompt()">
 id="success"
 class="success">✅ پرامپت کپی شد
 
-</div><textarea id="promptText">high-end editorial fashion photography, vertical 9:16, ultra-realistic high-angle street portrait of a young adult female looking up at the camera on textured asphalt, wearing an oversized gray blazer, white fitted top, gray tailored trousers and black pointed shoes, small white handbag in one hand, dramatic midday sunlight, sharp shadows, confident direct gaze, modern city fashion energy, realistic skin texture, built 100% from the unaltered facial features of the reference image, preserve the original face 100% exactly, hair unchanged, no smoothing, no text, no logo. STRICT FEMININE LOCK: elegant feminine styling only, refined pose.</textarea></div><script>
+</div><textarea id="promptText" hidden>high-end editorial fashion photography, vertical 9:16, ultra-realistic high-angle street portrait of a young adult female looking up at the camera on textured asphalt, wearing an oversized gray blazer, white fitted top, gray tailored trousers and black pointed shoes, small white handbag in one hand, dramatic midday sunlight, sharp shadows, confident direct gaze, modern city fashion energy, realistic skin texture, built 100% from the unaltered facial features of the reference image, preserve the original face 100% exactly, hair unchanged, no smoothing, no text, no logo. STRICT FEMININE LOCK: elegant feminine styling only, refined pose.</textarea></div><script>
 
-function copyPrompt(){
+async function copyPrompt(){
 
-var copyText =
-document.getElementById("promptText");
+const text =
+document.getElementById("promptText").value;
 
-copyText.style.display="block";
+try{
 
-copyText.select();
-
-copyText.setSelectionRange(0,99999);
-
-document.execCommand("copy");
-
-copyText.style.display="none";
+await navigator.clipboard.writeText(text);
 
 document.getElementById("success").style.display="block";
 
@@ -169,6 +159,29 @@ setTimeout(function(){
 document.getElementById("success").style.display="none";
 
 },2000);
+
+}catch(error){
+
+const textarea =
+document.getElementById("promptText");
+
+textarea.hidden = false;
+
+textarea.select();
+
+document.execCommand("copy");
+
+textarea.hidden = true;
+
+document.getElementById("success").style.display="block";
+
+setTimeout(function(){
+
+document.getElementById("success").style.display="none";
+
+},2000);
+
+}
 
 }
 
