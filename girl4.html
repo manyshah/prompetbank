@@ -1,1 +1,189 @@
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نیمرخ دیواری نوآر طلایی</title><style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:tahoma;
+}
+
+html,
+body{
+width:100%;
+overflow-x:hidden;
+}
+
+body{
+background:url('https://s21.uupload.ir/files/gambegampanjom/بانک%20پرامپت/لوگو%20و%20تصاویر%20اولیه/file_00000000500471f49b917570bded0ba3.png') center center/cover no-repeat fixed;
+min-height:100vh;
+color:#fff;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+z-index:0;
+}
+
+.container{
+position:relative;
+z-index:1;
+
+width:100%;
+max-width:700px;
+
+margin:0 auto;
+padding:20px;
+}
+
+.title{
+text-align:center;
+font-size:26px;
+font-weight:bold;
+margin:25px 0;
+
+text-shadow:
+0 0 15px rgba(120,100,255,.35);
+}
+
+.image{
+display:block;
+width:100%;
+max-width:100%;
+height:auto;
+
+border-radius:24px;
+
+margin:0 auto 20px auto;
+
+box-shadow:
+0 0 25px rgba(120,100,255,.15);
+}
+
+.copy-btn{
+display:block;
+
+width:100%;
+
+padding:18px;
+
+border:none;
+border-radius:20px;
+
+cursor:pointer;
+
+font-size:18px;
+font-weight:bold;
+
+color:#fff;
+
+background:linear-gradient(
+135deg,
+rgba(90,70,255,.30),
+rgba(0,180,255,.18)
+);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:
+0 0 20px rgba(110,90,255,.25),
+0 0 40px rgba(0,180,255,.12);
+
+transition:.3s;
+}
+
+.copy-btn:hover{
+transform:translateY(-2px);
+
+background:linear-gradient(
+135deg,
+rgba(110,90,255,.40),
+rgba(0,180,255,.25)
+);
+}
+
+.success{
+display:none;
+
+text-align:center;
+
+margin-top:15px;
+
+font-weight:bold;
+
+color:#00ff88;
+}
+
+#promptText{
+display:none;
+}
+
+</style></head><body><div class="container"><div class="title">
+ نیمرخ دیواری نوآر طلایی 🟡
+</div><img
+class="image"
+src="https://s15.uupload.ir/files/gambegampanjom/بانک%20پرامپت/لوگو%20و%20تصاویر%20اولیه/تصاویر%20زن%20و%20مرد/نیمرخ%20دیواری%20نوآر%20طلایی.jpg">
+
+<button
+class="copy-btn"
+onclick="copyPrompt()">
+
+📋 کپی پرامپت
+
+</button><div
+id="success"
+class="success">✅ پرامپت کپی شد
+
+</div><textarea id="promptText" hidden>Vertical 9:16 medium portrait of a young adult female seated against a gradient wall in side profile, head turned softly in contemplation, matte black crewneck top, minimal ear jewelry, dramatic hard-edged spotlight casting strong shadow outline, warm yellow to deep gray wall, right-side split lighting, bright highlights, deep shadows, painterly cinematic noir mood, built 100% from the unaltered facial features of the reference image, preserve the original face 100% exactly, hair unchanged, high-end cinematic photography, professional depth of field, natural/cinematic color grading. STRICT FEMININE LOCK: elegant feminine styling only, graceful female outfit, soft feminine proportions, refined pose, tasteful feminine accessory, no masculine tailoring, no boxy menswear, no masculine body language, no facial or hair alteration. single person only, one subject, natural anatomy, realistic hands, realistic eyes, no distorted face, no extra fingers, no warped body, realistic skin texture, no plastic skin, no over-retouching, completely clean and soft background, smooth uniform gradient, no noise, no grain, no film grain, no sensor noise, no compression artifacts, no banding, perfectly smooth color transitions, extremely high and sharp image quality, soft clean bokeh, no noisy texture in the background</textarea></div><script>
+
+async function copyPrompt(){
+
+const text =
+document.getElementById("promptText").value;
+
+try{
+
+await navigator.clipboard.writeText(text);
+
+document.getElementById("success").style.display="block";
+
+setTimeout(function(){
+
+document.getElementById("success").style.display="none";
+
+},2000);
+
+}catch(error){
+
+const textarea =
+document.getElementById("promptText");
+
+textarea.hidden = false;
+
+textarea.select();
+
+document.execCommand("copy");
+
+textarea.hidden = true;
+
+document.getElementById("success").style.display="block";
+
+setTimeout(function(){
+
+document.getElementById("success").style.display="none";
+
+},2000);
+
+}
+
+}
+
+</script></body>
+</html>
