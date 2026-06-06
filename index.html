@@ -3,54 +3,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>بانک پرامپت</title><style>
-body{
-background:#000;
-color:white;
-font-family:tahoma;
-text-align:center;
-padding:20px;
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:tahoma;
+}
+
+body{
+background:url('https://s21.uupload.ir/files/gambegampanjom/بانک%20پرامپت/لوگو%20و%20تصاویر%20اولیه/file_00000000500471f49b917570bded0ba3.png') center center/cover no-repeat fixed;
+min-height:100vh;
+position:relative;
+color:#fff;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(2px);
+z-index:0;
+}
+
+.container{
+position:relative;
+z-index:1;
+width:100%;
+max-width:520px;
+margin:auto;
+padding:25px 15px;
+text-align:center;
 }
 
 .logo{
-width:180px;
-margin-top:30px;
-margin-bottom:20px;
-}
-
-.title{
-font-size:32px;
-font-weight:bold;
-margin-bottom:10px;
+width:220px;
+max-width:85%;
+margin-top:20px;
+margin-bottom:25px;
 }
 
 .desc{
-color:#bbb;
-margin-bottom:30px;
-line-height:1.8;
+color:#d0d0d0;
+line-height:2;
+margin-bottom:35px;
+font-size:15px;
+text-shadow:0 0 10px rgba(0,0,0,.8);
 }
 
 .btn{
 display:block;
-background:#111;
-color:white;
-text-decoration:none;
+width:100%;
 padding:18px;
-margin:12px auto;
-border-radius:18px;
-max-width:500px;
+margin:14px auto;
+text-decoration:none;
+color:white;
 font-size:18px;
 font-weight:bold;
-border:1px solid #222;
+
+background:rgba(20,20,20,.55);
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.12);
+border-radius:20px;
+
+box-shadow:
+0 0 20px rgba(0,120,255,.15),
+0 0 40px rgba(0,120,255,.05);
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+background:rgba(30,30,30,.75);
 }
 
 .footer{
-margin-top:40px;
-color:#666;
-font-size:14px;
+margin-top:35px;
+font-size:13px;
+color:#9d9d9d;
 }
-</style></head>
-<body><img class="logo" src="https://s41.uupload.ir/files/gambegampanjom/بانک%20پرامپت/لوگو%20و%20تصاویر%20اولیه/Negar_1780673836629.png"><div class="title">بانک پرامپت</div><div class="desc">
+
+</style></head><body><div class="container"><img class="logo" src="https://s25.uupload.ir/files/gambegampanjom/بانک%20پرامپت/لوگو%20و%20تصاویر%20اولیه/1780673734820.png"><div class="desc">
 بزرگ‌ترین مجموعه پرامپت‌های هوش مصنوعی برای ساخت تصاویر حرفه‌ای
 </div><a href="#" class="btn">🚀 ورود به بانک پرامپت</a>
 
@@ -64,5 +100,5 @@ font-size:14px;
 
 <div class="footer">
 PrompetBank.ir ©
-</div></body>
+</div></div></body>
 </html>
