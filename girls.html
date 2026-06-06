@@ -35,17 +35,41 @@ padding:20px;
 
 .title{
 text-align:center;
-font-size:28px;
+font-size:30px;
 font-weight:bold;
-margin:25px 0;
+margin:30px 0;
+
+text-shadow:
+0 0 15px rgba(120,100,255,.35);
 }
 
 .card{
-background:rgba(20,20,20,.55);
-border:1px solid rgba(255,255,255,.12);
-border-radius:20px;
-padding:18px;
-margin-bottom:15px;
+background:rgba(15,15,30,.45);
+
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+
+border:1px solid rgba(140,120,255,.18);
+
+border-radius:24px;
+
+padding:20px;
+
+margin-bottom:18px;
+
+box-shadow:
+0 0 20px rgba(120,100,255,.08);
+
+transition:.3s;
+}
+
+.card:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 0 25px rgba(120,100,255,.15);
+
 }
 
 .card-title{
@@ -57,25 +81,49 @@ margin-bottom:12px;
 .btn{
 display:block;
 width:100%;
-padding:14px;
+padding:16px;
+
 text-decoration:none;
 text-align:center;
-color:#fff;
+
+color:white;
+font-size:16px;
 font-weight:bold;
 
-background:rgba(110,80,255,0.18);
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
+background:linear-gradient(
+135deg,
+rgba(90,70,255,.30),
+rgba(0,180,255,.18)
+);
 
-border:1px solid rgba(140,120,255,0.35);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 
-border-radius:16px;
+border:1px solid rgba(180,180,255,.25);
+
+border-radius:18px;
 
 box-shadow:
-0 0 15px rgba(120,100,255,.25),
-0 0 35px rgba(120,100,255,.10);
+0 0 20px rgba(110,90,255,.25),
+0 0 40px rgba(0,180,255,.12);
 
-transition:.3s;
+transition:all .3s ease;
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+background:linear-gradient(
+135deg,
+rgba(110,90,255,.40),
+rgba(0,180,255,.25)
+);
+
+box-shadow:
+0 0 25px rgba(120,100,255,.45),
+0 0 60px rgba(0,180,255,.25);
+
 }
 
 .btn:hover{
