@@ -3,7 +3,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>زن کت طوسی خیابانی</title><style>
-
 *{
 margin:0;
 padding:0;
@@ -59,8 +58,8 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.copy-btn:hover{
-background:#1f1f1f;
+.copy-btn:active{
+transform:scale(.98);
 }
 
 .success{
@@ -71,6 +70,10 @@ font-weight:bold;
 display:none;
 }
 
+textarea{
+position:absolute;
+left:-9999px;
+}
 </style></head><body><div class="container"><div class="title">
 زن کت طوسی خیابانی ⚡
 </div><img class="image"
@@ -80,17 +83,25 @@ src="https://s15.uupload.ir/files/gambegampanjom/بانک%20پرامپت/لوگ�
 📋 کپی پرامپت
 </button><div id="success" class="success">
 ✅ پرامپت کپی شد
-</div></div><script>
+</div><textarea id="promptText">high-end editorial fashion photography, vertical 9:16, ultra-realistic high-angle street portrait of a young adult female looking up at the camera on textured asphalt, wearing an oversized gray blazer, white fitted top, gray tailored trousers and black pointed shoes, small white handbag in one hand, dramatic midday sunlight, sharp shadows, confident direct gaze, modern city fashion energy, realistic skin texture, built 100% from the unaltered facial features of the reference image, preserve the original face 100% exactly, hair unchanged, no smoothing, no text, no logo. STRICT FEMININE LOCK: elegant feminine styling only, refined pose.</textarea></div><script>
+function copyPrompt() {
 
-function copyPrompt(){
+var copyText = document.getElementById("promptText");
 
-const prompt = high-end editorial fashion photography, vertical 9:16, ultra-realistic high-angle street portrait of a young adult female looking up at the camera on textured asphalt, wearing an oversized gray blazer, white fitted top, gray tailored trousers and black pointed shoes, small white handbag in one hand, dramatic midday sunlight, sharp shadows, confident direct gaze, modern city fashion energy, realistic skin texture, built 100% from the unaltered facial features of the reference image, preserve the original face 100% exactly, hair unchanged, no smoothing, no text, no logo. STRICT FEMININE LOCK: elegant feminine styling only, refined pose.;
+copyText.style.display = "block";
+copyText.select();
+copyText.setSelectionRange(0, 99999);
 
-navigator.clipboard.writeText(prompt);
+document.execCommand("copy");
 
-document.getElementById("success").style.display="block";
+copyText.style.display = "none";
+
+document.getElementById("success").style.display = "block";
+
+setTimeout(function(){
+document.getElementById("success").style.display = "none";
+},2000);
 
 }
-
 </script></body>
 </html>
